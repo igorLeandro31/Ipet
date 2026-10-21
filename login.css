@@ -1,0 +1,348 @@
+/* 1. Cores e estilos gerais */
+:root {
+  --fundo: #fcfcfa;
+  --texto: #203b3e;
+  --texto-secundario: #637570;
+  --laranja: #d9562b;
+  --verde: #234b4d;
+  --borda: #dce4de;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font: inherit;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--laranja);
+  outline-offset: 5px;
+}
+h1,
+h2,
+p,
+figure {
+  margin: 0;
+}
+
+/* 2. Cabeçalho e marca */
+.cabecalho {
+  max-width: 1440px;
+  min-height: 96px;
+  margin: auto;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+.logo-icone {
+  width: 43px;
+  height: 43px;
+  padding: 8px;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--laranja);
+  transform: rotate(-8deg);
+}
+.ponto {
+  color: var(--laranja);
+}
+.voltar {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+.voltar:hover {
+  color: var(--laranja);
+}
+
+/* 3. Layout principal em duas colunas */
+.pagina-login {
+  max-width: 1268px;
+  margin: 16px auto 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 28px;
+  gap: 60px;
+}
+.apresentacao {
+  background: #eef2e9;
+  border-radius: 24px;
+  padding: 38px 38px 24px;
+  overflow: hidden;
+}
+.categoria {
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+  color: #526c60;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: clamp(32px, 3.1vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -1.7px;
+  margin-bottom: 20px;
+}
+h1 span {
+  color: var(--laranja);
+}
+.texto-apresentacao > p:last-child {
+  color: var(--texto-secundario);
+  line-height: 1.7;
+}
+.foto-pet {
+  margin-top: 28px;
+  position: relative;
+}
+.foto-pet img {
+  width: 100%;
+  height: 290px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+}
+.foto-pet figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0 0;
+  color: #3f5f50;
+  font-size: 14px;
+}
+.coracao {
+  font-size: 29px;
+  color: var(--laranja);
+  line-height: 1;
+}
+
+/* 4. Formulário e campos */
+.area-formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+  min-width: 0;
+}
+.formulario-conteudo {
+  width: 100%;
+  max-width: 400px;
+}
+.destaque {
+  color: var(--laranja);
+}
+h2 {
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  margin-bottom: 13px;
+}
+.introducao {
+  color: var(--texto-secundario);
+  line-height: 1.6;
+}
+.formulario {
+  margin-top: 32px;
+}
+.campo {
+  margin-bottom: 21px;
+}
+.campo label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.campo input {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid var(--borda);
+  background: white;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: var(--texto);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.campo input::placeholder {
+  color: #7b8881;
+}
+.campo input:focus {
+  outline: none;
+  border-color: var(--laranja);
+  box-shadow: 0 0 0 3px #d9562b1a;
+}
+.botao-entrar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  min-height: 54px;
+  margin-top: 28px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  background: var(--laranja);
+  font-weight: 700;
+}
+.botao-entrar:not(:disabled) {
+  cursor: pointer;
+}
+.botao-entrar:not(:disabled):hover {
+  background: #bd4420;
+}
+.botao-entrar:disabled {
+  cursor: not-allowed;
+}
+.aviso {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid #e5e8e1;
+  border-radius: 8px;
+  color: #65736b;
+  background: #f3f5ef;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.mensagem-comunidade {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-top: 1px solid var(--borda);
+  margin-top: 29px;
+  padding-top: 24px;
+}
+.mensagem-comunidade svg {
+  width: 27px;
+  height: 27px;
+  color: var(--laranja);
+  flex-shrink: 0;
+}
+.mensagem-comunidade p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--texto-secundario);
+}
+.mensagem-comunidade strong {
+  color: #456457;
+  font-weight: 600;
+}
+
+/* 5. Rodapé */
+.rodape {
+  max-width: 1268px;
+  margin: 0 auto;
+  padding: 22px 28px 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #6e7c73;
+  font-size: 12px;
+}
+
+/* 6. Tablet e celular */
+@media (max-width: 1000px) {
+  .pagina-login {
+    gap: 32px;
+  }
+  .apresentacao {
+    padding: 32px 24px 22px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 760px) {
+  .cabecalho {
+    min-height: 80px;
+    padding: 18px 24px;
+  }
+  .logo {
+    font-size: 31px;
+  }
+  .logo-icone {
+    width: 38px;
+    height: 38px;
+  }
+  .pagina-login {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 24px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  .area-formulario {
+    order: -1;
+    padding: 24px 0;
+  }
+  .formulario-conteudo {
+    max-width: 440px;
+  }
+  .apresentacao {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .foto-pet img {
+    height: 230px;
+  }
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    gap: 8px;
+  }
+}
+@media (max-width: 380px) {
+  .cabecalho {
+    gap: 12px;
+    padding-inline: 18px;
+  }
+  .voltar {
+    font-size: 13px;
+    gap: 6px;
+  }
+  .pagina-login {
+    padding-inline: 18px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
